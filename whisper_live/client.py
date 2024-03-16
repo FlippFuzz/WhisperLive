@@ -371,8 +371,10 @@ class Client:
 
             # Process the stream
             while True:
+                print(f"[DEBUG]: Processing HLS stream")
                 in_bytes = process.stdout.read(self.chunk * 2)  # 2 bytes per sample
                 if not in_bytes:
+                    print(f"[DEBUG]: Processing HLS stream - Invalid in_bytes. Terminating.")
                     break
                 audio_array = self.bytes_to_float_array(in_bytes)
                 print(f"[DEBUG]: audio_array len: {len(audio_array)}")
