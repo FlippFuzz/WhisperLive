@@ -375,7 +375,7 @@ class Client:
                 if not in_bytes:
                     break
                 audio_array = self.bytes_to_float_array(in_bytes)
-                print(f"[DEBUG]: audio_array len: {len(audio_array}")
+                print(f"[DEBUG]: audio_array len: {len(audio_array)}")
                 self.send_packet_to_server(audio_array.tobytes())
 
         except Exception as e:
